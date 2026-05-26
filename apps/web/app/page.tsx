@@ -1,6 +1,9 @@
 import Image, { type ImageProps } from "next/image";
 import { Button } from "@repo/ui/button";
 import styles from "./page.module.css";
+// import { formatDate } from "@my-utils/utils";
+import { formatDate } from "@my-utils/utils/date";
+// import { formatDate } from "@repo/utils";
 
 type Props = Omit<ImageProps, "src"> & {
   srcLight: string;
@@ -64,7 +67,8 @@ export default function Home() {
           </a>
         </div>
         <Button appName="web" className={styles.secondary}>
-          Open alert
+          {/* Open alert */}
+          {formatDate(new Date())}
         </Button>
       </main>
       <footer className={styles.footer}>

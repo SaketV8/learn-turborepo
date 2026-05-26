@@ -157,3 +157,36 @@ Learn more about the power of Turborepo:
 - [Filtering](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters)
 - [Configuration Options](https://turborepo.dev/docs/reference/configuration)
 - [CLI Usage](https://turborepo.dev/docs/reference/command-line-reference)
+
+
+---
+
+# 🌼 Recommendation for Monorepo
+
+If this is:
+
+* internal-only workspace packages → wildcard can be okay
+* shared foundation package → prefer explicit exports
+* published package → avoid `"./*"` unless intentional
+
+A very common monorepo setup is:
+
+```json
+"exports": {
+  ".": "./src/index.ts",
+  "./*": "./src/*.ts"
+}
+```
+
+for convenience during development.
+
+But for long-term maintainability:
+
+```json
+"exports": {
+  ".": "./src/index.ts",
+  "./math": "./src/math.ts",
+  "./string": "./src/string.ts"
+}
+```
+
