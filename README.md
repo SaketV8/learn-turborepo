@@ -2,6 +2,8 @@
 
 This Turborepo starter is maintained by the Turborepo core team.
 
+### [🌸 Turborepo guide (～￣▽￣)～](./turbo-repo-guide.md)
+
 ## Using this example
 
 Run the following command:
